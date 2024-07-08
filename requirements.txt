@@ -1,0 +1,10 @@
+Celery
+Django
+django-allauth
+django-htmx
+django-celery-beat
+django-celery-results
+Faker
+python-decouple
+redis
+django-crispy-forms

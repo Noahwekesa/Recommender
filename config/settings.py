@@ -26,9 +26,16 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Third Party Apps
+    "allauth",
+    "allauth.account",
+    "crispy_forms",
+    "crispy_bootstrap5",
+    "debug_toolbar",
     # Apps
     "pages",
+    "accounts",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -112,5 +119,9 @@ STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# django-crispy-forms
+# https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

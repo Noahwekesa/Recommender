@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "crispy_forms",
     "crispy_bootstrap5",
-    "debug_toolbar",
     # Apps
     "pages",
     "accounts",
@@ -45,6 +44,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",  # django-allauth
 ]
 
 ROOT_URLCONF = "config.urls"

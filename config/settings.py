@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     # Apps
-    "pages",
     "accounts",
 ]
 
@@ -125,3 +124,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+#
+# https://docs.djangoproject.com/en/dev/topics/auth/customizing/#substituting-a-custom-user-model
+AUTH_USER_MODEL = "accounts.CustomUser"

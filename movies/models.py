@@ -4,6 +4,7 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(max_length=120)
     overview = models.TextField()
+    poster = models.ImageField(upload_to="media/")
     release_date = models.DateField(
         blank=True,
         null=True,

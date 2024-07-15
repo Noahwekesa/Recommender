@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     # Apps
     "accounts",
+    "movies",
 ]
 
 

@@ -52,8 +52,7 @@ def get_fake_profiles(count=10):
         data = {
             "username": profile.get("username"),
             "email": profile.get("mail"),
-            # "password": make_password(fake.password(length=15)),
-            "is_true": True,
+            "is_active": True,
         }
         if "name" in profile:
             fname, lname = profile.get("name").split(" ")[:2]

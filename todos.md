@@ -1,9 +1,13 @@
-Django -> pipline
+Django as a machine learning Pipeline Orchestration Tool:
 
-- get data
+- Get data Via Django
   - Using faker
-- Prepare data
-- Train model from data
-- User model on New data
+  - User [x]
+  - Ratings [ ] - Collaborative Filtering
+  - Dataset [ ]
+    - Open source Datasets -kaggle
+- Prepare data via Django and Panda
+- Train model from data via Django and celery using keras
+- User model on New data via django and celery using keras
 
 cold problem solving

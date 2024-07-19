@@ -13,7 +13,8 @@ class MovieQuerySet(models.QuerySet):
         now = timezone.now()
         days_ago = now - datetime.timedelta(days=RATING_CALC_TIME_IN_DAYS)
         return self.filter(
-            Q(rating_last_updated__isnull=True) | Q(rating_last_updated__lte=days_ago)
+            Q(rating_last_updated__isnull=True) | Q(
+                rating_last_updated__lte=days_ago)
         )
 
 
@@ -54,6 +55,9 @@ class Movie(models.Model):
         blank=True,
     )
     objects = MovieManager()
+
+    def get_absolute_url(self):
+        return f"/movies/{self.id}/"
 
     def __str__(self):
         if not self.release_date:

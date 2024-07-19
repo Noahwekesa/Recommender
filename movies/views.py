@@ -6,7 +6,7 @@ from .models import Movie
 class MovieListView(generic.ListView):
     template_name = "movies/list.html"
     paginate_by = 100
-    queryset = Movie.objects.all()
+    queryset = Movie.objects.all().order_by("-rating_avg")
 
 
 movie_list_view = MovieListView.as_view()
@@ -17,4 +17,4 @@ class MovieDetailView(generic.DetailView):
     queryset = Movie.objects.all()
 
 
-movie_detail_view = MovieListView.as_view()
+movie_detail_view = MovieDetailView.as_view()

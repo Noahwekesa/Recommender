@@ -1,0 +1,33 @@
+<div class="card shadow-sm">
+  <!-- <img src="{{object.poster.url}}" class="card-img-top" alt="{{object.title}} poster"> -->
+  <div class="card-body">
+    <h3>{{object.title}} ({{object.release_date.year}})</h3>
+    <p class="card-text">{{ object.overview }}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        {% if object.get_absolute_url not in request.path %}
+        <a
+          href="{{object.get_absolute_url}}"
+          class="w-100 btn btn-md btn-dark d-block fw-bold"
+        >
+          View
+        </a>
+        {% endif %}
+      </div>
+      <div>
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        {% if object.rating_avg is not None %}
+        <small class="text-body-secondary"
+          >{{ object.rating_avg }} ({{ object.rating_count }})</small
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

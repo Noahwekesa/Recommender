@@ -29,7 +29,7 @@ class MovieManager(models.Manager):
 class Movie(models.Model):
     title = models.CharField(max_length=120)
     overview = models.TextField()
-    poster = models.ImageField(upload_to="media/")
+    poster = models.CharField(max_length=255)
     release_date = models.DateField(
         blank=True,
         null=True,

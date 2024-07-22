@@ -1,37 +1,37 @@
+{% load get_dict_val %}
+
+{% with my_ratings|get_dict_val:object.id  as current_rating %}
+
 <div class="card shadow-sm">
-  <img
-    src="{{object.poster}}"
-    class="card-img-top"
-    alt="{{object.title}} poster"
-  />
+  <img src="{{object.poster}}" class="card-img-top" alt="{{object.title}} poster" />
   <div class="card-body">
     <h3>{{object.title}} ({{object.release_date.year}})</h3>
     <p class="card-text">{{ object.overview }}</p>
     <div class="d-flex justify-content-between align-items-center">
       <div class="btn-group">
         {% if object.get_absolute_url not in request.path %}
-        <a
-          href="{{object.get_absolute_url}}"
-          class="w-100 btn btn-md btn-dark d-block fw-bold"
-        >
+        <a href="{{object.get_absolute_url}}" class="w-100 btn btn-md btn-dark d-block fw-bold">
           View
         </a>
         {% endif %}
       </div>
       <div>
-        <select class="form-select">
-          {% for choice in rating_choices %} {% if choice is None %}
-          <option disabled selected>Pick a rating ⭐</option>
-          {% else %}
-          <option value="{{ choice}}">{{choice}}</option>
-          {% endif %} {% endfor %}
+        <select class="form-control">
+
+          {% for choice in rating_choices %}
+
+            {% if choice is None %}
+            <option disabled selected>Pick a rating ⭐</option>
+            {% else %}
+            <option {% if current_rating == choice %}selected{% endif %} value="{{ choice }}">{{ choice }}</option>
+            {% endif %}  
+          {% endfor %}
         </select>
         {% if object.rating_avg is not None %}
-        <small class="text-body-secondary"
-          >{{ object.rating_avg }} ({{ object.rating_count }})</small
-        >
+        <small class="text-body-secondary">{{ object.rating_avg }} ({{ object.rating_count }})</small>
         {% endif %}
       </div>
     </div>
   </div>
 </div>
+{% endwith %}

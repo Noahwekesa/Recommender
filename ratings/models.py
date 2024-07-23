@@ -48,23 +48,13 @@ class RatingManager(models.Manager):
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    value = models.IntegerField(
-        null=True,
-        blank=True,
-        choices=RatingChoice.choices,
-    )
-    content_type = models.ForeignKey(
-        ContentType,
-        on_delete=models.CASCADE,
-    )
+    value = models.IntegerField(null=True, blank=True, choices=RatingChoice.choices)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey("content_type", "object_id")
     active = models.BooleanField(default=True)
     active_update_timestamp = models.DateTimeField(
-        auto_now=False,
-        auto_now_add=False,
-        null=True,
-        blank=True,
+        auto_now_add=False, auto_now=False, null=True, blank=True
     )
     timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -86,6 +76,7 @@ def rating_post_save(sender, instance, created, *args, **kwargs):
             if qs.exists():
                 qs = qs.exclude(active_update_timestamp__isnull=False)
                 qs.update(active=False, active_update_timestamp=timezone.now())
+            # qs.delete()
 
 
 post_save.connect(rating_post_save, sender=Rating)

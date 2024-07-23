@@ -4,11 +4,12 @@
 <div class="d-flex align-items-center py-4 bg-body-tertiary">
   <div class="form-signin m-auto">
     <form>
+      {% csrf_token %}
       <h1 class="h3 mb-3 fw-bold">Please sign in</h1>
 
       {{ form|crispy }}
       <button class="btn btn-dark fw-bold w-100 py-2" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+      <p class="mt-5 mb-3 text-body-secondary">© {% now "Y" %}</p>
     </form>
   </div>
 </div>

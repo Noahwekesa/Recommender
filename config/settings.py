@@ -32,10 +32,11 @@ INSTALLED_APPS = [
     # Third Party App
     "django_celery_results",  # scheduler
     "django_celery_beat",  # saves our tasks resulsts
-    "allauth",
-    "allauth.account",
-    "crispy_forms",
-    "crispy_bootstrap5",
+    "allauth",  # django allauth
+    "allauth.account",  # django allauth
+    "crispy_forms",  # crispy forms
+    "crispy_bootstrap5",  # crispy forms
+    "django_htmx",  # htmx
     # Apps
     "accounts",
     "movies",
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",  # django-allauth
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

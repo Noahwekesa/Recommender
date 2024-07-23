@@ -5,7 +5,7 @@
 <div class="card shadow-sm">
   <img src="{{object.poster}}" class="card-img-top" alt="{{object.title}} poster" />
   <div class="card-body">
-    <h3>{{object.title}} ({{object.release_date.year}})</h3>
+    <h3>{{object.title}} {% if object.release_date %}({{object.release_date.year}}) {% endif %} </h3>
     <p class="card-text">{{ object.overview }}</p>
     <div class="d-flex justify-content-between align-items-center">
       <div class="btn-group">

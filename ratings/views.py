@@ -12,6 +12,13 @@ def rate_movie_view(request):
         return HttpResponse("Not Allowed", status=400)
     object_id = request.POST.get("object_id")
     rating_value = request.POST.get("rating_value")
+    if object_id is None or rating_value is None:
+        response = HttpResponse(
+            '<button disabled class="btn btn-ouline-primary spinner-border"><span class="visually-hidden">Loading...</span></button>',
+            status=200,
+        )
+        response["HX-trigger"] = "did-skip-movie"
+        return response
     user = request.user
     message = "You must <a href='/accounts/login'>login</a> to rate this."
     if user.is_authenticated:
@@ -22,4 +29,10 @@ def rate_movie_view(request):
         )
         if rating_obj.content_object is not None:
             message = "<span class='bg-success text-light py-1 px-3 rounded'>Rating saved!</div>"
-    return HttpResponse(message, status=200)
+            response = HttpResponse(
+                "Rated",
+                status=200,
+            )
+            response["HX-trigger-After-Settle"] = "did-rate-movie"
+            return response
+        return HttpResponse(message, status=200)

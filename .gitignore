@@ -3,6 +3,11 @@
 local-cdn/
 data/movies_metadata.csv
 data/ratings_small.csv
+data/keywords.csv
+data/links.csv
+data/links_small.csv
+data/ratings.csv
+data/credits.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

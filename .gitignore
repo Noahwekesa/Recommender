@@ -1,4 +1,5 @@
 # data and apps data
+.DS_Store 
 local-cdn/
 data/movies_metadata.csv
 

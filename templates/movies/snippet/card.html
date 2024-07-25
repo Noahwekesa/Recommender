@@ -3,7 +3,7 @@
 {% with my_ratings|get_dict_val:object.id  as current_rating %}
 
 <div class="card shadow-sm">
-  <img src="{{object.poster}}" class="card-img-top" alt="{{object.title}} poster" />
+  <img src="{{ object.poster.url }}" class="card-img-top" alt="{{object.title}} poster" />
   <div class="card-body">
     <h3>{{object.title}} {% if object.release_date %}({{object.release_date.year}}) {% endif %} </h3>
     <p class="card-text">{{ object.overview }}</p>

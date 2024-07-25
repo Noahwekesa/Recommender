@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.contrib.contenttypes.models import ContentType
 from django.views.decorators.http import require_http_methods
 
-
 from .models import Rating
 
 

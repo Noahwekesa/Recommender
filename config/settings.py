@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "accounts",
     "movies",
     "ratings",
+    "exports",
 ]
 
 SITE_ID = 1
@@ -143,8 +144,8 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 # Media files (User-uploaded content)
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Adjust as needed
+# MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "local-cdn" / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

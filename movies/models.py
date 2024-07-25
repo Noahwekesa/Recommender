@@ -13,8 +13,7 @@ class MovieQuerySet(models.QuerySet):
         now = timezone.now()
         days_ago = now - datetime.timedelta(days=RATING_CALC_TIME_IN_DAYS)
         return self.filter(
-            Q(rating_last_updated__isnull=True) | Q(
-                rating_last_updated__lte=days_ago)
+            Q(rating_last_updated__isnull=True) | Q(rating_last_updated__lte=days_ago)
         )
 
 
@@ -29,7 +28,7 @@ class MovieManager(models.Manager):
 class Movie(models.Model):
     title = models.CharField(max_length=120)
     overview = models.TextField()
-    poster = models.CharField(max_length=255)
+    poster = models.ImageField(upload_to="posters/")
     release_date = models.DateField(
         blank=True,
         null=True,

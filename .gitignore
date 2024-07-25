@@ -1,5 +1,7 @@
-# data
+# data and apps data
+local-cdn/
 data/movies_metadata.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

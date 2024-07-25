@@ -2,6 +2,7 @@
 .DS_Store 
 local-cdn/
 data/movies_metadata.csv
+data/ratings_small.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

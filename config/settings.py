@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",  # crispy forms
     "django_htmx",  # htmx
     # Apps
+    "ml",
+    "pages",
     "accounts",
     "movies",
     "ratings",
@@ -160,10 +162,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # AUTH_USER_MODEL = "accounts.CustomUser"
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "/"
 
 # https://django-allauth.readthedocs.io/en/latest/views.html#logout-account-logout
-ACCOUNT_LOGOUT_REDIRECT_URL = "index"
+ACCOUNT_LOGOUT_REDIRECT_URL = "account_signup"
 
 # https://django-allauth.readthedocs.io/en/latest/installation.html?highlight=backends
 AUTHENTICATION_BACKENDS = (

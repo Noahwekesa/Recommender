@@ -6,6 +6,7 @@ from django.urls import include, path
 from ratings import views as ratings_views
 
 urlpatterns = [
+    path("", include("pages.urls")),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("movies/", include("movies.urls")),

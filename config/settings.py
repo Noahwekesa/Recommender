@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",  # crispy forms
     "django_htmx",  # htmx
     # Apps
+    "suggestions",
     "ml",
     "pages",
     "accounts",

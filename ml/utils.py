@@ -6,6 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db.models import F
 from django.conf import settings
 
+
 from ratings.models import Rating
 from surprise import accuracy, Reader, Dataset, SVD
 from surprise.model_selection import cross_validate

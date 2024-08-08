@@ -9,3 +9,5 @@ python-decouple
 redis
 django-crispy-forms
 crispy-bootstrap5
+numpy<2
+scikit-surprise
